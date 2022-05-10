@@ -1,4 +1,12 @@
 body
 {
-  background-color: gray !important;
+  background-color: rgba(209, 245, 255, 0.65);
+  display: flex;
+  justify-content: center;
+
+}
+
+.cartao__titulo
+{
+  font-size: 4rem;
 }

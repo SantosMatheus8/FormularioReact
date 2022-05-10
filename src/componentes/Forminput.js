@@ -1,22 +1,20 @@
 import React from "react";
+import "../assets/css/forminput.css";
 
-const Forminput = (props) => {
-  const [valor, setValor] = React.useState("");
-
-  function handleChange(event) {
-    setValor(event.target.value);
-  }
-
-  console.log(valor);
+const Forminput = ({ type, id, label, value, setValue }) => {
   return (
-    <div>
-      <label htmlFor={props.htmlFor}>{props.label}</label>
+    <div className="formulario__conteiner">
       <input
-        type={props.type}
-        id={props.id}
-        value={valor}
-        onChange={handleChange}
+        className="formulario__input"
+        type={type}
+        id={id}
+        name={id}
+        value={value}
+        onChange={({ target }) => setValue(target.value)}
       />
+      <label htmlFor={id} className="formulario__label">
+        {label}
+      </label>
     </div>
   );
 };
