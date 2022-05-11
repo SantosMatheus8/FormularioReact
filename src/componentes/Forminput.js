@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/forminput.css";
 
-const Forminput = ({ type, id, label, value, setValue }) => {
+const Forminput = ({ type, id, label, valor, onChange, erro, onBlur }) => {
   return (
     <div className="formulario__conteiner">
       <input
@@ -9,12 +9,14 @@ const Forminput = ({ type, id, label, value, setValue }) => {
         type={type}
         id={id}
         name={id}
-        value={value}
-        onChange={({ target }) => setValue(target.value)}
+        value={valor}
+        onChange={onChange}
+        onBlur={onBlur}
       />
       <label htmlFor={id} className="formulario__label">
         {label}
       </label>
+      {erro && <p>{erro}</p>}
     </div>
   );
 };

@@ -3,121 +3,82 @@ import "./reset.css";
 import "./assets/css/formcontainer.css";
 import Forminput from "./componentes/Forminput";
 import Formsecoes from "./componentes/Formsecoes";
+import useForm from "./Hooks/useForm";
 
 function App() {
-  const [nome, setNome] = React.useState("");
-  const [dataNasc, setDataNasc] = React.useState("");
-  const [cpf, setCpf] = React.useState("");
-  const [telefone, setTelefone] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [senha, setSenha] = React.useState("");
-  const [confirmaSenha, setConfirmaSenha] = React.useState("");
-  const [cep, setCep] = React.useState("");
-  const [cidade, setCidade] = React.useState("");
-  const [estado, setEstado] = React.useState("");
-  const [numero, setNumero] = React.useState("");
-  const [bairro, setBairro] = React.useState("");
-  const [complemento, setComplemento] = React.useState("");
+  const nome = useForm();
+  const dataNasc = useForm();
+  const cpf = useForm("cpf");
+  const telefone = useForm();
+  const email = useForm("email");
+  const senha = useForm();
+  const confirmaSenha = useForm();
+  const cep = useForm("cep");
+  const cidade = useForm();
+  const estado = useForm();
+  const numero = useForm();
+  const bairro = useForm();
+  const complemento = useForm();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (
+      nome.valido() &&
+      dataNasc.valido() &&
+      cpf.valido() &&
+      telefone.valido &&
+      email.valido() &&
+      senha.valido() &&
+      confirmaSenha.valido() &&
+      cep.valido() &&
+      cidade.valido() &&
+      estado.valido() &&
+      numero.valido() &&
+      bairro.valido() &&
+      complemento.valido()
+    ) {
+      console.log("Usuário cadastrado");
+    } else {
+      console.log("Nao cadastrado");
+    }
+  }
 
   return (
     <div className="cartao">
       <h1 className="cartao__titulo">Cadastre-se</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Formsecoes title="Informações Pessoais">
+          <Forminput id="nome" label="Nome Completo" type="text" {...nome} />
           <Forminput
-            type="text"
-            id="nome"
-            label="Nome Completo"
-            value={nome}
-            setValue={setNome}
-          />
-          <Forminput
-            type="date"
             id="dataNasc"
             label="Data de nascimento"
-            value={dataNasc}
-            setValue={setDataNasc}
+            type="date"
+            {...dataNasc}
           />
-          <Forminput
-            type="text"
-            id="cpf"
-            label="CPF"
-            value={cpf}
-            setValue={setCpf}
-          />
-          <Forminput
-            type="text"
-            id="telefone"
-            label="Telefone"
-            value={telefone}
-            setValue={setTelefone}
-          />
+          <Forminput id="cpf" label="CPF" type="text" {...cpf} />
+          <Forminput id="telefone" label="Telefone" type="text" {...telefone} />
         </Formsecoes>
         <Formsecoes title="Informações Da Conta">
+          <Forminput id="email" label="Email" type="text" {...email} />
+          <Forminput id="senha" label="Senha" type="password" {...senha} />
           <Forminput
-            type="text"
-            id="email"
-            label="Email"
-            value={email}
-            setValue={setEmail}
-          />
-          <Forminput
-            type="password"
-            id="senha"
-            label="Senha"
-            value={senha}
-            setValue={setSenha}
-          />
-          <Forminput
-            type="password"
             id="confirmaSenha"
             label="Confirmar Senha"
-            value={confirmaSenha}
-            setValue={setConfirmaSenha}
+            type="password"
+            {...confirmaSenha}
           />
         </Formsecoes>
         <Formsecoes title="Endereço">
+          <Forminput id="cep" label="CEP" type="text" {...cep} />
+          <Forminput id="cidade" label="Cidade" type="text" {...cidade} />
+          <Forminput id="estado" label="Estado" type="text" {...estado} />
+          <Forminput id="numero" label="Numero" type="text" {...numero} />
+          <Forminput id="bairro" label="Bairro" type="text" {...bairro} />
           <Forminput
-            type="text"
-            id="cep"
-            label="CEP"
-            value={cep}
-            setValue={setCep}
-          />
-          <Forminput
-            type="text"
-            id="cidade"
-            label="Cidade"
-            value={cidade}
-            setValue={setCidade}
-          />
-          <Forminput
-            type="text"
-            id="estado"
-            label="Estado"
-            value={estado}
-            setValue={setEstado}
-          />
-          <Forminput
-            type="text"
-            id="numero"
-            label="Numero"
-            value={numero}
-            setValue={setNumero}
-          />
-          <Forminput
-            type="text"
-            id="bairro"
-            label="Bairro"
-            value={bairro}
-            setValue={setBairro}
-          />
-          <Forminput
-            type="text"
             id="complemento"
             label="Complemento"
-            value={complemento}
-            setValue={setComplemento}
+            type="text"
+            {...complemento}
           />
         </Formsecoes>
       </form>
