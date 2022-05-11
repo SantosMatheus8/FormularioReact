@@ -1,0 +1,11 @@
+.formulario__botao
+{
+  background-color: rgba(27, 91, 252, 0.71);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  height: 3rem;
+  margin-top: 2rem;
+  width: 100%;
+}

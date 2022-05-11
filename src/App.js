@@ -4,6 +4,7 @@ import "./assets/css/formcontainer.css";
 import Forminput from "./componentes/Forminput";
 import Formsecoes from "./componentes/Formsecoes";
 import useForm from "./Hooks/useForm";
+import Botao from "./componentes/Botao";
 
 function App() {
   const nome = useForm();
@@ -81,6 +82,7 @@ function App() {
             {...complemento}
           />
         </Formsecoes>
+        <Botao>ENVIAR</Botao>
       </form>
     </div>
   );

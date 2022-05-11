@@ -16,7 +16,7 @@ const Forminput = ({ type, id, label, valor, onChange, erro, onBlur }) => {
       <label htmlFor={id} className="formulario__label">
         {label}
       </label>
-      {erro && <p>{erro}</p>}
+      {erro && <p className="formulario__mensagem-erro">{erro}</p>}
     </div>
   );
 };

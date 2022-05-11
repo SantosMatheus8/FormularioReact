@@ -3,16 +3,16 @@ import React from "react";
 const tipos = {
   cep: {
     regex: /^\d{5}-?\d{3}$/,
-    message: "Cep inválido",
+    message: "Digite um CEP válido",
   },
   email: {
     regex:
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    message: "Email inválido",
+    message: "Digite um EMAIL válido",
   },
   cpf: {
     regex: /^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$/,
-    message: "CPF inválido",
+    message: "Digite um CPF válido",
   },
 };
 
@@ -23,7 +23,7 @@ const useForm = (tipo) => {
   function valido(valor) {
     if (tipo === false) return true;
     if (valor.length === 0) {
-      setErro("Preencha um valor");
+      setErro("*Preencha este campo");
       return false;
     } else if (tipos[tipo] && !tipos[tipo].regex.test(valor)) {
       setErro(tipos[tipo].message);
