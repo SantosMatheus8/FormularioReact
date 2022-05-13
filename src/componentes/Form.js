@@ -42,7 +42,7 @@ const Form = () => {
       bairro.valido() &&
       complemento.valido()
     ) {
-      navigate("*");
+      navigate("cadastroRealizado");
     } else {
       alert("Preencha corretamente todos os campos");
     }

@@ -1,0 +1,32 @@
+.cartao
+{
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+  padding: 2.5rem;
+  width: 40vw;  
+}
+
+.texto
+{
+  font-size : 1.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.conteiner
+{
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.link
+{
+  text-align: right;
+}
