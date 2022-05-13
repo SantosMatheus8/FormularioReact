@@ -5,6 +5,9 @@ import Formsecoes from "./Formsecoes";
 import useForm from "../Hooks/useForm";
 import Botao from "./Botao";
 
+import { useNavigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+
 const Form = () => {
   const nome = useForm();
   const dataNasc = useForm();
@@ -19,6 +22,8 @@ const Form = () => {
   const numero = useForm();
   const bairro = useForm();
   const complemento = useForm();
+
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -37,9 +42,9 @@ const Form = () => {
       bairro.valido() &&
       complemento.valido()
     ) {
-      console.log("Usuário cadastrado");
+      navigate("*");
     } else {
-      console.log("Nao cadastrado");
+      alert("Preencha corretamente todos os campos");
     }
   }
 
@@ -58,6 +63,7 @@ const Form = () => {
           <Forminput id="cpf" label="CPF" type="text" {...cpf} />
           <Forminput id="telefone" label="Telefone" type="text" {...telefone} />
         </Formsecoes>
+
         <Formsecoes title="Informações Da Conta">
           <Forminput id="email" label="Email" type="text" {...email} />
           <Forminput id="senha" label="Senha" type="password" {...senha} />
@@ -68,6 +74,7 @@ const Form = () => {
             {...confirmaSenha}
           />
         </Formsecoes>
+
         <Formsecoes title="Endereço">
           <Forminput id="cep" label="CEP" type="text" {...cep} />
           <Forminput id="cidade" label="Cidade" type="text" {...cidade} />
@@ -81,6 +88,7 @@ const Form = () => {
             {...complemento}
           />
         </Formsecoes>
+
         <Botao>ENVIAR</Botao>
       </form>
     </div>
