@@ -1,8 +1,8 @@
 import React from "react";
-import "../assets/css/botao.css";
+import stylesBotao from "../assets/css/botao.module.css";
 
 const Botao = ({ children }) => {
-  return <button className="formulario__botao">{children}</button>;
+  return <button className={stylesBotao.formularioBotao}>{children}</button>;
 };
 
 export default Botao;

@@ -1,10 +1,10 @@
 import React from "react";
-import "../assets/css/formsecoes.css";
+import stylesSecao from "../assets/css/formsecoes.module.css";
 
 const Formsecoes = (props) => {
   return (
-    <fieldset>
-      <legend className="titulo-legenda">{props.title}</legend>
+    <fieldset className={stylesSecao.fieldset}>
+      <legend className={stylesSecao.legenda}>{props.title}</legend>
       {props.children}
     </fieldset>
   );

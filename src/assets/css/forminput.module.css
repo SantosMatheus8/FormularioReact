@@ -1,4 +1,4 @@
-.formulario__conteiner
+.conteiner
 {
     border: 0;
     background-color: inherit;
@@ -9,27 +9,27 @@
     outline: 0;
     position: relative;
 }
-.formulario__input
+.input
 {
     border-bottom: 2px solid rgba(110, 110, 110, 0.65);
     outline: 0;
     transition: all 0.2s;
     width: 100%;
 }
-.formulario__input:focus
+.input:focus
 {
     border-bottom: 2px solid rgba(27, 91, 252, 0.71);
     outline: 0;
     width: 100%;
 }
 
-.formulario__input:focus ~ .formulario__label
+.input:focus ~ .label
 {
     color: rgba(27, 91, 252, 0.71);
     font-size: 1.4rem;
 }
 
-.formulario__label
+.label
 {
     bottom: 20px;
     cursor: text;
@@ -41,7 +41,7 @@
     transform: translateY(-25px);
 }
 
-.formulario__mensagem-erro
+.mensagemErro
 {
     color: red;
     margin-top : 0.5rem;

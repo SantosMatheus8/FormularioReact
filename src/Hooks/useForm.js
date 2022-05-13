@@ -14,6 +14,11 @@ const tipos = {
     regex: /^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$/,
     message: "Digite um CPF válido",
   },
+  senha: {
+    regex: /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$/,
+    message:
+      "A senha deve ter entre 6 e 15 dígitos, uma letra minúscula, uma letra maiúscula, um número e um caractere especial",
+  },
 };
 
 const useForm = (tipo) => {

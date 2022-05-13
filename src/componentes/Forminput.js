@@ -1,11 +1,11 @@
 import React from "react";
-import "../assets/css/forminput.css";
+import stylesInput from "../assets/css/forminput.module.css";
 
 const Forminput = ({ type, id, label, valor, onChange, erro, onBlur }) => {
   return (
-    <div className="formulario__conteiner">
+    <div className={stylesInput.conteiner}>
       <input
-        className="formulario__input"
+        className={stylesInput.input}
         type={type}
         id={id}
         name={id}
@@ -13,10 +13,10 @@ const Forminput = ({ type, id, label, valor, onChange, erro, onBlur }) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      <label htmlFor={id} className="formulario__label">
+      <label htmlFor={id} className={stylesInput.label}>
         {label}
       </label>
-      {erro && <p className="formulario__mensagem-erro">{erro}</p>}
+      {erro && <p className={stylesInput.mensagemErro}>{erro}</p>}
     </div>
   );
 };

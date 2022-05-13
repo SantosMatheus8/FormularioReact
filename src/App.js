@@ -12,8 +12,8 @@ function App() {
   const cpf = useForm("cpf");
   const telefone = useForm();
   const email = useForm("email");
-  const senha = useForm();
-  const confirmaSenha = useForm();
+  const senha = useForm("senha");
+  const confirmaSenha = useForm("senha");
   const cep = useForm("cep");
   const cidade = useForm();
   const estado = useForm();
