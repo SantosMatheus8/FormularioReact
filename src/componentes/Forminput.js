@@ -3,7 +3,13 @@ import stylesInput from "../assets/css/forminput.module.css";
 
 const Forminput = ({ type, id, label, valor, onChange, erro, onBlur }) => {
   return (
-    <div className={stylesInput.conteiner}>
+    <div
+      className={
+        erro && type === "password"
+          ? stylesInput.conteinerErro
+          : stylesInput.conteiner
+      }
+    >
       <input
         className={stylesInput.input}
         type={type}

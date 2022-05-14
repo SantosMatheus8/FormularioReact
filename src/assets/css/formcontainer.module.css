@@ -14,3 +14,11 @@
 {
   font-size: 4rem;
 }
+
+@media (max-width: 520px)
+{
+  .cartaoTitulo
+  {
+    font-size: 3rem;
+  }
+}
