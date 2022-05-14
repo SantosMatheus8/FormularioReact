@@ -18,7 +18,7 @@
 
 ## Tela de cadastro com sucesso
 
-##### Ao clicar no botão voltar, o programa redireciona para a página de cadastro
+##### --Obs : Ao clicar no botão voltar, o programa redireciona para a página de cadastro
 
 ![localhost_3000_ (2)](https://user-images.githubusercontent.com/98671908/168447929-6b75d1f4-4b2d-4698-a320-2f4b5cc9e0e2.png)
 
